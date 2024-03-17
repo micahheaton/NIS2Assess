@@ -1,0 +1,80 @@
+<template>
+  <div>
+    <div class="pie-chart-container" ref="pieChart"></div> 
+    <div v-if="categoryHeatmapData"> <div class="heatmap-container" ref="heatmap"></div>
+    </div>
+    <div class="license-chart-container" ref="licenseChart"></div>
+  </div>
+</template>
+
+<script>
+import Plotly from 'plotly.js-dist'; 
+
+export default {
+  props: {
+    comparisonResults: {
+      type: Array,
+      required: true,
+    },
+    categoryHeatmapData: {
+      type: Object,
+      required: true
+    },
+    licenseChartData: {
+      type: Object,
+      required: true
+    }
+  },
+  mounted() {
+    this.renderPieChart();
+    this.renderBarChart();
+    this.renderHeatmap();
+    this.renderLicenseChart();
+  },
+  methods: {
+    renderPieChart() { 
+      // ... (Your existing Pie Chart code) ...
+    },
+        renderBarChart() {
+      // Bar Chart Data Transformation and Plotly Logic
+    }
+
+    renderHeatmap() {
+        console.log('categoryHeatmapData:', this.props.categoryHeatmapData); // Add this line
+      const heatmapData = [{
+        z: this.props.categoryHeatmapData.values,
+        x: this.props.categoryHeatmapData.categories, 
+        y: this.props.categoryHeatmapData.nis2Scores,
+        type: 'heatmap'
+      }];
+
+      const layout = { title: 'Category Heatmap' }; 
+      Plotly.newPlot(this.$refs.heatmap, heatmapData, layout);
+    },
+
+    renderLicenseChart() {
+      const licenseData = [
+        {
+          x: this.props.licenseChartData.nis2Scores,
+          y: this.props.licenseChartData.values[0],
+          type: 'bar',
+          name: 'With License'
+        },
+        {
+          x: this.props.licenseChartData.nis2Scores,
+          y: this.props.licenseChartData.values[1],
+          type: 'bar',
+          name: 'Without License'
+        }
+      ];
+
+      const layout = { 
+        title: 'License Chart', 
+        barmode: 'group' 
+      };
+
+      Plotly.newPlot(this.$refs.licenseChart, licenseData, layout);
+    }
+  },
+};
+</script>

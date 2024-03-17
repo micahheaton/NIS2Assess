@@ -1,0 +1,323 @@
+<template>
+    <div class="pdf-content" ref="pdfContent">
+      <div class="header">
+        <img src="../assets/bvlogo.png" alt="BlueVoyant Logo" class="logo" />
+        <h1>M365 NIS2 Readiness Assessment</h1>
+      </div>
+      <div class="charts">
+        <div class="pie-chart-container" ref="pieChart"></div>
+        <div class="pie-chart-container" ref="deploymentPieChart"></div>
+        <div class="bar-chart-container" ref="barChart"></div>
+        <div class="sankey-container" ref="sankeyDiagram"></div>
+        <div class="license-chart-container" ref="licenseChart"></div>
+      </div>
+      <div class="comparison-results">
+        <h2>Comparison Results</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Recommended Action</th>
+              <th>Status</th>
+              <th>Points Achieved</th>
+              <th>NIS2 Score</th>
+              <th>Article 21</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="result in comparisonResults" :key="result.RecommendedAction">
+              <td>{{ result.RecommendedAction }}</td>
+              <td>{{ result.Status }}</td>
+              <td>{{ result.PointsAchieved }}</td>
+              <td>{{ result.NIS2Score }}</td>
+              <td>{{ result.Article21 }}</td>
+              <td>{{ result.Rationale }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </template>
+  
+  <script lang="ts">
+  import { defineComponent, PropType } from 'vue';
+  import * as Plotly from 'plotly.js-dist';
+  import { ComparisonResult } from './ComparisonResult';
+  
+  export default defineComponent({
+    name: 'PdfContent',
+    props: {
+      comparisonResults: {
+        type: Array as () => ComparisonResult[],
+        required: true,
+      },
+    },
+    mounted() {
+      this.renderPieChart();
+      this.renderDeploymentPieChart();
+      this.renderBarChart();
+      this.renderSankey();
+      this.renderLicenseChart();
+    },
+    methods: {
+      renderPieChart() {
+        const pieChartData = this.calculatePieChartData();
+        const layout = {
+          title: 'NIS2 Score Distribution',
+          font: { size: 14 },
+        };
+        Plotly.newPlot(this.$refs.pieChart as HTMLElement, pieChartData.data, layout);
+      },
+      calculatePieChartData() {
+        let implicitCount = 0;
+        let explicitCount = 0;
+        this.comparisonResults.forEach((item) => {
+          if (item.NIS2Score === 1) {
+            implicitCount++;
+          } else if (item.NIS2Score === 2) {
+            explicitCount++;
+          }
+        });
+        return {
+          data: [
+            {
+              values: [implicitCount, explicitCount],
+              labels: ['Implicit', 'Explicit'],
+              type: 'pie',
+              marker: { colors: ['#1f77b4', '#ff7f0e'] },
+              textinfo: 'value',
+              hoverinfo: 'label+percent',
+            },
+          ],
+        };
+      },
+      renderDeploymentPieChart() {
+        const deploymentPieChartData = this.calculateDeploymentPieChartData();
+        const layout = {
+          title: 'Deployment Status',
+          font: { size: 14 },
+        };
+        Plotly.newPlot(this.$refs.deploymentPieChart as HTMLElement, deploymentPieChartData.data, layout);
+      },
+      calculateDeploymentPieChartData() {
+        let completedCount = 0;
+        let toAddressCount = 0;
+        this.comparisonResults.forEach((item) => {
+          if (item.NIS2Score === 1 || item.NIS2Score === 2) {
+            if (item.Status === 'Completed') {
+              completedCount++;
+            } else if (item.Status === 'To address') {
+              toAddressCount++;
+            }
+          }
+        });
+        return {
+          data: [
+            {
+              values: [completedCount, toAddressCount],
+              labels: ['Deployed', 'Not Deployed'],
+              type: 'pie',
+              marker: { colors: ['green', 'red'] },
+              textinfo: 'value',
+              hoverinfo: 'label+percent',
+            },
+          ],
+        };
+      },
+      renderBarChart() {
+        const barChartData = this.calculateBarChartData();
+        const layout = {
+          title: 'Deployment Status by Article',
+          xaxis: { title: 'Article', tickangle: -45 },
+          yaxis: { title: 'Count' },
+          barmode: 'group',
+          height: 600,
+          width: null,
+          autosize: true,
+        };
+        Plotly.newPlot(this.$refs.barChart as HTMLElement, barChartData.data, layout);
+      },
+      calculateBarChartData() {
+        const articleDeploymentStatus: { [key: string]: { Completed: number; 'To address': number } } = {
+          A: { Completed: 0, 'To address': 0 },
+          B: { Completed: 0, 'To address': 0 },
+          C: { Completed: 0, 'To address': 0 },
+          D: { Completed: 0, 'To address': 0 },
+          E: { Completed: 0, 'To address': 0 },
+          F: { Completed: 0, 'To address': 0 },
+          G: { Completed: 0, 'To address': 0 },
+          H: { Completed: 0, 'To address': 0 },
+          I: { Completed: 0, 'To address': 0 },
+          J: { Completed: 0, 'To address': 0 },
+        };
+        this.comparisonResults.forEach((item) => {
+          if (item.Article21) {
+            const articles = item.Article21.split(',');
+            articles.forEach((article) => {
+              if (articleDeploymentStatus[article]) {
+                articleDeploymentStatus[article][item.Status]++;
+              }
+            });
+          }
+        });
+        const x = Object.keys(articleDeploymentStatus);
+        const completedData = x.map((article) => articleDeploymentStatus[article]['Completed']);
+        const toAddressData = x.map((article) => articleDeploymentStatus[article]['To address']);
+        return {
+          data: [
+            {
+              x,
+              y: completedData,
+              name: 'Completed',
+              type: 'bar',
+              marker: { color: 'green' },
+            },
+            {
+              x,
+              y: toAddressData,
+              name: 'To Address',
+              type: 'bar',
+              marker: { color: 'red' },
+            },
+          ],
+        };
+      },
+      renderSankey() {
+        const sankeyData = this.calculateSankeyData();
+        const data = {
+          type: 'sankey',
+          orientation: 'h',
+          node: {
+            pad: 15,
+            thickness: 30,
+            line: { color: 'black', width: 0.5 },
+            label: sankeyData.nodes,
+            color: 'blue',
+          },
+          link: {
+            source: sankeyData.sources,
+            target: sankeyData.targets,
+            value: sankeyData.values,
+          },
+        };
+        const layout = {
+          title: 'Sankey Diagram',
+          font: { size: 10 },
+        };
+        Plotly.newPlot(this.$refs.sankeyDiagram as HTMLElement, [data], layout);
+      },
+      calculateSankeyData() {
+        const nodes: (string | number)[] = [];
+        const sources: number[] = [];
+        const targets: number[] = [];
+        const values: number[] = [];
+        this.comparisonResults.forEach((item) => {
+          if (!nodes.includes(item.Category)) {
+            nodes.push(item.Category);
+          }
+          if (!nodes.includes(item.NIS2Score)) {
+            nodes.push(item.NIS2Score);
+          }
+          const sourceIndex = nodes.indexOf(item.Category);
+          const targetIndex = nodes.indexOf(item.NIS2Score);
+          sources.push(sourceIndex);
+          targets.push(targetIndex);
+          values.push(1);
+        });
+        return { nodes, sources, targets, values };
+      },
+      renderLicenseChart() {
+        const licenseChartData = this.calculateLicenseChartData();
+        const layout = {
+          title: 'License Status by NIS2 Score',
+          xaxis: { title: 'NIS2 Score' },
+          yaxis: { title: 'Count' },
+          barmode: 'group',
+        };
+        Plotly.newPlot(this.$refs.licenseChart as HTMLElement, licenseChartData.data, layout);
+      },
+      calculateLicenseChartData() {
+        const licenseStatus: { [key: string]: { 'With License': number; 'Without License': number } } = {
+          '1': { 'With License': 0, 'Without License': 0 },
+          '2': { 'With License': 0, 'Without License': 0 },
+        };
+        this.comparisonResults.forEach((item) => {
+          if (item.NIS2Score === 1 || item.NIS2Score === 2) {
+            const licenseKey = item.HasLicense ? 'With License' : 'Without License';
+            licenseStatus[item.NIS2Score][licenseKey]++;
+          }
+        });
+        const x = ['1', '2'];
+        const withLicenseData = x.map((score) => licenseStatus[score]['With License']);
+        const withoutLicenseData = x.map((score) => licenseStatus[score]['Without License']);
+        return {
+          data: [
+            {
+              x,
+              y: withLicenseData,
+              name: 'With License',
+              type: 'bar',
+            },
+            {
+              x,
+              y: withoutLicenseData,
+              name: 'Without License',
+              type: 'bar',
+            },
+          ],
+        };
+      },
+    },
+  });
+  </script>
+  
+  <style scoped>
+  .pdf-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .header {
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .charts {
+    margin-bottom: 20px;
+  }
+  
+  .comparison-results {
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  </style>

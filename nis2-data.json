@@ -1,0 +1,1163 @@
+[
+  {
+    "RecommendedAction": "Block process creations originating from PSExec and WMI commands",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Allow Basic authentication' for WinRM Client",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Autoplay' for all drives",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Local Security Authority (LSA) protection'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Enumerate administrator accounts on elevation'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Allow Basic authentication' for WinRM Service",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable the built-in Administrator account",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Turn on Microsoft Defender Application Guard managed mode",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable Anonymous enumeration of shares",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable Solicited Remote Assistance",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable scanning of removable drives during a full scan",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block Office applications from injecting code into other processes",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block executable files from running unless they meet a prevalence, age, or trusted list criterion",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block execution of potentially obfuscated scripts",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block credential stealing from the Windows local security authority subsystem (lsass.exe)",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block Office communication application from creating child processes",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block Adobe Reader from creating child processes",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block all Office applications from creating child processes",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block abuse of exploited vulnerable signed drivers",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block persistence through WMI event subscription",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block JavaScript or VBScript from launching downloaded executable content",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Network Protection'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set Microsoft Defender SmartScreen app and file checking to block or warn",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable Microsoft Entra ID Identity Protection sign-in risk policies",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable Microsoft Entra ID Identity Protection user risk policies",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set LAN Manager authentication level to 'Send NTLMv2 response only. Refuse LM & NTLM'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block untrusted and unsigned processes that run from USB",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block executable content from email client and webmail",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Use advanced protection against ransomware",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block Win32 API calls from Office macros",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set controlled folder access to enabled or audit mode",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set 'Account lockout threshold' to 1-10 invalid login attempts",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Use Just In Time privileged access to Office 365 roles",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Change service executable path to a common protected location",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Resolve unsecure domain configurations",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable Print spooler service on domain controllers",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Protect and manage local admin passwords with Microsoft LAPS",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable IP source routing",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set 'Minimum PIN length for startup' to '6 or more characters'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set 'Interactive logon: Machine inactivity limit' to '1-900 seconds'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set 'Minimum password length' to '14 or more characters'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable running or installing downloaded software with invalid signature",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable Automatic Updates",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Autoplay for non-volume devices'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Installation and configuration of Network Bridge on your DNS domain network'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Hide Option to Enable or Disable Updates'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable merging of local Microsoft Defender Firewall connection rules with group policy firewall rules for the Public profile",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set IPv6 source routing to highest protection",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Prohibit use of Internet Connection Sharing on your DNS domain network",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable Local Admin password management",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Apply UAC restrictions to local accounts on network logons'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable the local storage of passwords and credentials",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block outdated ActiveX controls for Internet Explorer",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Microsoft network client: Digitally sign communications (always)'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set user authentication for remote connections by using Network Level Authentication to 'Enabled'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure 'External sharing' of calendars is not available",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure Sign-in frequency is enabled and browser sessions are not persistent for Administrative users",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure additional storage providers are restricted in Outlook on the web",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure all forms of mail forwarding are blocked and/or disabled",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set 'Account lockout duration' to 15 minutes or more",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set 'Reset account lockout counter after' to 15 minutes or more",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Create an OAuth app policy to notify you about new OAuth applications",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Turn on PUA protection in block mode",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that only organizationally managed/approved public groups exist",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that mobile device password reuse is prohibited",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that mobile devices require complex passwords (Type = Alphanumeric)",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that mobile devices require a minimum password length to prevent brute force attacks",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure mobile device management policies are set to require advanced security configurations",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block OneDrive for Business sync from unmanaged devices",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure SharePoint external sharing is managed through domain whitelist/blacklists",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure 'LinkedIn account connections' is disabled",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure MailTips are enabled for end users",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure Exchange Online Spam Policies are set to notify administrators",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure users installing Outlook add-ins is not allowed",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that SharePoint guest users cannot share items they don't own",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that Sways cannot be shared with people outside of your organization",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure 'User owned apps and services' is restricted",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Require domain users to elevate when setting a network's location'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Only invited users should be automatically admitted to Teams meetings",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Configure which users are allowed to present in Teams meetings",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disallow offline access to shares",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Update Microsoft Defender for Endpoint core components",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Unrestricted Access Accounts for Linux",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure the customer lockbox feature is enabled",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set a honeytoken account",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Restrict anonymous users from joining meetings",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block users who reached the message limit",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Sign out inactive users in SharePoint Online",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Turn on Microsoft Defender Credential Guard",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set 'Minimum password age' to '1 or more day(s)'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set 'Enforce password history' to '24 or more password(s)'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Secure Microsoft Defender Firewall domain profile",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Secure Microsoft Defender firewall private profile",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable Microsoft Defender Firewall notifications when programs are blocked for Private profile",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable Microsoft Defender Firewall notifications when programs are blocked for Domain profile",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable Microsoft Defender Firewall notifications when programs are blocked for Public profile",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable impersonated domain protection",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Secure Microsoft Defender Firewall public profile",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Insecure guest logons' in SMB",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Always install with elevated privileges'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Anonymous enumeration of SAM accounts'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable SMBv1 server",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Change service account to avoid cached password in windows registry",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Store LAN Manager hash value on next password change'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Safe DLL Search Mode'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Restrict anonymous access to named pipes and Shares",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable SMBv1 client driver",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Fix unquoted service path for Windows services",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Remove shares from the root folder",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set folder access-based enumeration for shares",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Remove share write permission set to ‘Everyone’",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure the 'Password expiration policy' is set to 'Set passwords to never expire (recommended)'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Regulate apps with priority account consent",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure internal phishing protection for Forms is enabled",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Modify unsecure Kerberos delegations to prevent impersonation",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Remove unsecure SID history attributes from entities",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure the Common Attachment Types Filter is enabled",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Domain member: Digitally encrypt or sign secure channel data (always)'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Network access: Let Everyone permissions apply to anonymous users'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Domain member: Require strong (Windows 2000 or later) session key'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'WDigest Authentication'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Limit local account use of blank passwords to console logon only'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set 'Maximum password age' to '60 or fewer days, but not 0'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable Explorer Data Execution Prevention (DEP)",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Block Flash activation in Office documents",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable 'Domain member: Digitally sign secure channel data (when possible)'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable Set 'Domain member: Digitally encrypt secure channel data (when possible)'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Configure Offer Remote Assistance'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable sending unencrypted password to third-party SMB servers",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure third party integrated applications are not allowed",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure the admin consent workflow is enabled",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that SPF records are published for all Exchange Domains",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Remove access rights on suspicious accounts with the Admin SDHolder permission",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Remove local admins on identity assets",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Manage accounts with passwords more than 180 days old",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Remove non-admin accounts with DCSync permissions ",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Remove the attribute 'password never expires' from accounts in your domain",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure custom banned passwords lists are used",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure user consent to apps accessing company data on their behalf is not allowed",
+    "NIS2Score": 0,  
+  },
+  {
+    "RecommendedAction": "Create zero-hour auto purge policies for phishing messages",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set action to take on bulk spam detection",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable the domain impersonation safety tip",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable the user impersonation safety tip",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Enable the user impersonation unusual characters safety tip ",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that mobile devices require complex passwords (Simple Passwords = Blocked)",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that mobile devices are set to never expire passwords",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure mobile devices are set to wipe on multiple sign-in failures to prevent brute force compromise",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure Office 365 Management Activity API is Enabled for some workloads (see description)",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Disable 'Domain member: Disable machine account password changes'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Create zero-hour auto purge policies for spam messages",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure 'Self service password reset enabled' is set to 'All'",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Restrict dial-in users from bypassing a meeting lobby ",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Limit external participants from having control in a Teams meeting",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Restrict anonymous users from starting Teams meetings",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Don't add allowed IP addresses in the connection filter policy ",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Extend M365 sensitivity labeling to assets in Microsoft Purview data map",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Retain spam in quarantine for 30 days",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set the email bulk complaint level (BCL) threshold to be 6 or lower",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set automatic email forwarding rules to be system controlled",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set maximum number of external recipients that a user can email per hour",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set maximum number of internal recipients that a user can send to within an hour",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Set a daily message limit",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Designate more than one global admin",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Use least privileged administrative roles",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure Spam confidence level (SCL) is configured in mail transport rules with specific domains",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Ensure that no sender domains are allowed for anti-spam policies",
+    "NIS2Score": 0
+  },
+  {
+    "RecommendedAction": "Turn on Microsoft Defender Antivirus PUA protection in block mode for Linux",
+    "NIS2Score": 1,
+    "Article21": "A",
+    "Rationale": "Enabling Potentially Unwanted Application (PUA) protection in block mode for Linux systems provides an additional layer of defense against potentially malicious or risky applications, which contributes to managing the overall cybersecurity risk posture."
+  },
+  {
+    "RecommendedAction": "Set default behavior for 'AutoRun' to 'Enabled: Do not execute any autorun commands'",
+    "NIS2Score": 1,
+    "Article21": "I,G",
+    "Rationale": "Disabling AutoRun aligns with access control policies and asset management (i), and also contributes to basic cyber hygiene practices (g) by preventing the automatic execution of potentially malicious code."
+  },
+  {
+    "RecommendedAction": "Set User Account Control (UAC) to automatically deny elevation requests",
+    "NIS2Score": 1,
+    "Article21": "I",
+    "Rationale": "While this restricts user privilege escalation and enforces access control, it may significantly impact productivity. More balanced approaches are advised."
+  },
+  {
+    "RecommendedAction": "Ensure 'Phishing-resistant MFA strength' is required for Administrators",
+    "NIS2Score": 1,
+    "Article21": "G",
+    "Rationale": "Provides advanced threat protection capabilities for email and collaboration tools, detecting and blocking sophisticated phishing, malware, and other threats."
+  },
+  {
+    "RecommendedAction": "Ensure devices lock after a period of inactivity to prevent unauthorized access",
+    "NIS2Score": 1,
+    "Article21": "I,G",
+    "Rationale": "Automatically locking devices after inactivity aligns with access control policies and asset management (i), and also promotes basic cyber hygiene practices (g) by preventing unauthorized access to unattended devices."
+  },
+  {
+    "RecommendedAction": "Ensure Administrative accounts are separate and cloud-only",
+    "NIS2Score": 1,
+    "Article21": "I",
+    "Rationale": "Separating administrative accounts and making them cloud-only supports access control policies and asset management, reducing the risk of compromised privileged accounts."
+  },
+  {
+    "RecommendedAction": "Ensure 'Microsoft Azure Management' is limited to administrative roles",
+    "NIS2Score": 1,
+    "Article21": "A,I",
+    "Rationale": "Justification: Restricting Azure Management access to administrative roles aligns with access control policies and the principle of least privilege (i), and also supports the implementation of risk analysis and information system security policies (a) by limiting access to critical management functions."
+  },
+  {
+    "RecommendedAction": "Fix Microsoft Defender for Endpoint impaired communications",
+    "NIS2Score": 1,
+    "Article21": "B,F",
+    "Rationale": "Ensuring proper communication between Defender for Endpoint and its cloud services is necessary for assessing the effectiveness of the cybersecurity risk management measures (f), and also supports incident handling capabilities (b) by maintaining the functionality of the endpoint protection solution."
+  },
+  {
+    "RecommendedAction": "Deploy a log collector to discover shadow IT activity",
+    "NIS2Score": 1,
+    "Article21": "A,5,",
+    "Rationale": "Provides visibility, control, and threat protection for cloud applications, ensuring secure and compliant use of SaaS services."
+  },
+  {
+    "RecommendedAction": "Configure VPN integration",
+    "NIS2Score": 1,
+    "Article21": "I",
+    "Rationale": "Ensures secure and authenticated access to corporate resources for remote users, protecting against unauthorized access and data exfiltration."
+  },
+  {
+    "RecommendedAction": "Ensure modern authentication for SharePoint applications is required",
+    "NIS2Score": 1,
+    "Article21": "I,J",
+    "Rationale": "Enforcing modern authentication for SharePoint applications supports access control policies (i) and aligns with the requirement to use multi-factor authentication or continuous authentication solutions (j) for secure"
+  },
+  {
+    "RecommendedAction": "Ensure BitLocker drive compatibility",
+    "NIS2Score": 1,
+    "Article21": "A,H",
+    "Rationale": "Ensuring BitLocker drive compatibility supports risk analysis and information system security policies (a) and aligns with policies and procedures regarding the use of cryptography and encryption (h) by preparing drives for encryption."
+  },
+  {
+    "RecommendedAction": "Turn on all system-level Exploit protection settings",
+    "NIS2Score": 1,
+    "Article21": "E",
+    "Rationale": "Applies exploit mitigation techniques to protect against common exploit patterns and techniques, reducing the risk of successful attacks."
+  },
+  {
+    "RecommendedAction": "Set 'Remote Desktop security level' to 'TLS'",
+    "NIS2Score": 1,
+    "Article21": "A,H,I",
+    "Rationale": "Setting 'Remote Desktop security level' to 'TLS' supports risk analysis and information system security policies (a), aligns with policies and procedures regarding the use of cryptography and encryption (h) by enforcing secure communication protocols, and contributes to human resources security, access control policies, and asset management (i) by securing remote access."
+  },
+  {
+    "RecommendedAction": "Move messages that are detected as impersonated users by mailbox intelligence",
+    "NIS2Score": 1,
+    "Article21": "A,B,G",
+    "Rationale": "Moving messages that are detected as impersonated users by mailbox intelligence directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by isolating potentially malicious emails, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Set the phishing email level threshold at 2 or higher",
+    "NIS2Score": 1,
+    "Article21": "B,G",
+    "Rationale": "Provides advanced threat protection capabilities for email and collaboration tools, detecting and blocking sophisticated phishing, malware, and other threats."
+  },
+  {
+    "RecommendedAction": "Enable impersonated user protection",
+    "NIS2Score": 1,
+    "Article21": "A,B,G",
+    "Rationale": "Enabling impersonated user protection directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by detecting and preventing email impersonation attacks, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Regulate cloud app access to sensitive data",
+    "NIS2Score": 1,
+    "Article21": "A,E,I",
+    "Rationale": "Regulating cloud app access to sensitive data supports risk analysis and information system security policies (a), contributes to security in network and information systems acquisition, development, and maintenance (e), and aligns with human resources security, access control policies, and asset management (i) by protecting sensitive data from unauthorized access."
+  },
+  {
+    "RecommendedAction": "Quarantine messages that are detected from impersonated users",
+    "NIS2Score": 1,
+    "Article21": "A,B",
+    "Rationale": "Quarantining messages that are detected from impersonated users supports risk analysis and information system security policies (a) and contributes to incident handling capabilities (b) by preventing the delivery of potentially malicious emails."
+  },
+  {
+    "RecommendedAction": "Ensure password protection is enabled for on-prem Active Directory",
+    "NIS2Score": 1,
+    "Article21": "G,I",
+    "Rationale": "Extends the Azure AD password protection capabilities to on-premises Active Directory environments, ensuring consistent enforcement of strong password policies across hybrid environments."
+  },
+  {
+    "RecommendedAction": "Stop clear text credentials exposure",
+    "NIS2Score": 1,
+    "Article21": "G,I",
+    "Rationale": "Provides advanced detection and automated response capabilities for identifying and mitigating threats related to compromised identities and insider risks."
+  },
+  {
+    "RecommendedAction": "Remove dormant accounts from sensitive groups",
+    "NIS2Score": 1,
+    "Article21": "A,I",
+    "Rationale": "Removing dormant accounts from sensitive groups directly supports risk analysis and information system security policies (a) and aligns with human resources security, access control policies, and asset management (i) by reducing the risk of unauthorized access through inactive accounts."
+  },
+  {
+    "RecommendedAction": "Reduce lateral movement path risk to sensitive entities",
+    "NIS2Score": 1,
+    "Article21": "A,B",
+    "Rationale": "Identifies and alerts on potential lateral movement paths within the organization's network, enabling proactive mitigation of insider threats and compromised accounts."
+  },
+  {
+    "RecommendedAction": "Ensure DLP policies are enabled",
+    "NIS2Score": 1,
+    "Article21": "E",
+    "Rationale": "Helps identify, monitor, and protect sensitive data across Microsoft 365 services, reducing the risk of data leakage or unauthorized disclosure."
+  },
+  {
+    "RecommendedAction": "Set action to take on high confidence spam detection",
+    "NIS2Score": 1,
+    "Article21": "A,B",
+    "Rationale": "Setting action to take on high confidence spam detection supports risk analysis and information system security policies (a) and contributes to incident handling capabilities (b) by automatically handling spam emails based on confidence levels."
+  },
+  {
+    "RecommendedAction": "Set action to take on phishing detection",
+    "NIS2Score": 1,
+    "Article21": "B,G",
+    "Rationale": "Provides advanced threat protection capabilities for email and collaboration tools, detecting and blocking sophisticated phishing, malware, and other threats."
+  },
+  {
+    "RecommendedAction": "Set action to take on high confidence phishing detection",
+    "NIS2Score": 1,
+    "Article21": "B,G",
+    "Rationale": "Provides advanced threat protection capabilities for email and collaboration tools, detecting and blocking sophisticated phishing, malware, and other threats."
+  },
+  {
+    "RecommendedAction": "Set action to take on spam detection",
+    "NIS2Score": 1,
+    "Article21": "A,B",
+    "Rationale": "Setting action to take on spam detection supports risk analysis and information system security policies (a) and contributes to incident handling capabilities (b) by defining the action to be taken when spam emails are detected."
+  },
+  {
+    "RecommendedAction": "Create an app discovery policy to identify new and trending cloud apps in your org ",
+    "NIS2Score": 1,
+    "Article21": "A,F",
+    "Rationale": "Creating an app discovery policy to identify new and trending cloud apps supports risk analysis and information system security policies (a) and aligns with policies and procedures to assess the effectiveness of cybersecurity risk management measures (f) by providing visibility into cloud app usage."
+  },
+  {
+    "RecommendedAction": "Ensure DLP policies are enabled for Microsoft Teams",
+    "NIS2Score": 1,
+    "Article21": "Helps identify, monitor, and protect sensitive data across Microsoft 365 services, reducing the risk of data leakage or unauthorized disclosure."
+  },
+  {
+    "RecommendedAction": "Ensure that users cannot connect from devices that are jail broken or rooted",
+    "NIS2Score": 1,
+    "Article21": "A,I",
+    "Rationale": "Ensuring that users cannot connect from devices that are jail broken or rooted supports risk analysis and information system security policies (a) and contributes to human resources security, access control policies, and asset management (i) by preventing access from compromised devices."
+  },
+  {
+    "RecommendedAction": "Ensure that devices connecting have AV and a local firewall enabled",
+    "NIS2Score": 1,
+    "Article21": "A,G,I",
+    "Rationale": "Ensuring that devices connecting have AV and a local firewall enabled supports risk analysis and information system security policies (a), aligns with basic cyber hygiene practices and cybersecurity training (g), and contributes to human resources security, access control policies, and asset management (i) by enforcing endpoint security controls."
+  },
+  {
+    "RecommendedAction": "Ensure mobile device management policies are required for email profiles - iOS/iPadOS only",
+    "NIS2Score": 1,
+    "Article21": "A,I",
+    "Rationale": "Ensuring mobile device management policies are required for email profiles supports risk analysis and information system security policies (a) and contributes to human resources security, access control policies, and asset management (i) by enforcing security controls on mobile devices accessing corporate email."
+  },
+  {
+    "RecommendedAction": "Ensure that an anti-phishing policy has been created",
+    "NIS2Score": 1,
+    "Article21": "B,G",
+    "Rationale": " Protects against various types of phishing attacks, including spear-phishing and business email compromise (BEC), reducing the risk of account compromise and data theft."
+  },
+  {
+    "RecommendedAction": "Create a custom activity policy to get alerts about suspicious usage patterns",
+    "NIS2Score": 1,
+    "Article21": "A,F",
+    "Rationale": "Provides visibility, control, and threat protection for cloud applications, ensuring secure and compliant use of SaaS services."
+  },
+  {
+    "RecommendedAction": "Publish M365 sensitivity label data classification policies",
+    "NIS2Score": 1,
+    "Article21": "A,E,H",
+    "Rationale": "Publishing M365 sensitivity label data classification policies supports risk analysis and information system security policies (a), contributes to security in network and information systems acquisition, development, and maintenance (e), and aligns with policies and procedures regarding the use of cryptography and encryption (h) by identifying and protecting sensitive data."
+  },
+  {
+    "RecommendedAction": "Turn on Safe Documents for Office Clients",
+    "NIS2Score": 1,
+    "Article21": "A,B,G",
+    "Rationale": "Turning on Safe Documents for Office Clients supports risk analysis and information system security policies (a), contributes to incident handling capabilities (b) by preventing the execution of malicious documents, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Ensure that Auto-labeling data classification policies are set up and used",
+    "NIS2Score": 1,
+    "Article21": "A,E,H",
+    "Rationale": "Auto-labeling data classification policies support risk analysis and information system security policies (a), contribute to security in network and information systems acquisition, development, and maintenance (e), and align with policies and procedures regarding the use of cryptography and encryption (h) by identifying and protecting sensitive data."
+  },
+  {
+    "RecommendedAction": "Update Microsoft Defender Antivirus definitions",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Updating Microsoft Defender Antivirus definitions directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by ensuring up-to-date protection against threats, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Turn on Safe Attachments in block mode",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Turning on Safe Attachments in block mode directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by blocking malicious email attachments, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Ensure Safe Attachments policy is enabled",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Ensuring Safe Attachments policy is enabled directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by scanning and blocking malicious email attachments, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Turn on Microsoft Defender Firewall",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Turning on Microsoft Defender Firewall directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by providing network-level protection, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Disable the built-in Guest account",
+    "NIS2Score": 2,
+    "Article21": "A,I",
+    "Rationale": "Disabling the built-in Guest account directly supports risk analysis and information system security policies (a) and aligns with human resources security, access control policies, and asset management (i) by preventing unauthorized access through a default account."
+  },
+  {
+    "RecommendedAction": "Ensure that intelligence for impersonation protection is enabled",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Ensuring that intelligence for impersonation protection is enabled directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by leveraging threat intelligence to detect impersonation attempts, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Quarantine messages that are detected from impersonated domains",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Quarantining messages that are detected from impersonated domains directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by preventing the delivery of potentially malicious emails, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Resolve unsecure account attributes",
+    "NIS2Score": 2,
+    "Article21": "A,I",
+    "Rationale": "Resolving unsecure account attributes directly supports risk analysis and information system security policies (a) and aligns with human resources security, access control policies, and asset management (i) by addressing vulnerabilities in user accounts."
+  },
+  {
+    "RecommendedAction": "Ensure mobile devices require the use of a password",
+    "NIS2Score": 2,
+    "Article21": "A,G,I",
+    "Rationale": "Ensuring mobile devices require the use of a password supports risk analysis and information system security policies (a), aligns with basic cyber hygiene practices and cybersecurity training (g), and contributes to human resources security, access control policies, and asset management (i) by enforcing authentication on mobile devices."
+  },
+  {
+    "RecommendedAction": "Turn on Microsoft Defender Antivirus real-time protection for Linux",
+    "NIS2Score": 2,
+    "Article21": "G",
+    "Rationale": "Enables essential antivirus capabilities to protect against malware, a core component of cyber hygiene."
+  },
+  {
+    "RecommendedAction": "Ensure multifactor authentication is enabled for all users in administrative roles",
+    "NIS2Score": 2,
+    "Article21": "I,J",
+    "Rationale": "Directly requires MFA for privileged users, a critical access control."
+  },
+  {
+    "RecommendedAction": "Ensure multifactor authentication is enabled for all users",
+    "NIS2Score": 2,
+    "Article21": "J",
+    "Rationale": " Explicitly mandates the use of MFA, a key control specified in NIS2."
+  },
+  {
+    "RecommendedAction": "Encrypt all BitLocker-supported drives",
+    "NIS2Score": 2,
+    "Article21": "H",
+    "Rationale": "Directly implements device encryption, a key control specified in NIS2."
+  },
+  {
+    "RecommendedAction": "Enable 'Require additional authentication at startup'",
+    "NIS2Score": 2,
+    "Article21": "J",
+    "Rationale": "Mandates MFA at device startup, directly supporting continuous authentication."
+  },
+  {
+    "RecommendedAction": "Block Office applications from creating executable content",
+    "NIS2Score": 2,
+    "Article21": "E",
+    "Rationale": "Hardens Office applications against common malware delivery and exploitation techniques."
+  },
+  {
+    "RecommendedAction": "Set Microsoft Defender SmartScreen Microsoft Edge site and download checking to block or warn",
+    "NIS2Score": 2,
+    "Article21": "G",
+    "Rationale": "Implements essential threat protection measures for web browsing and file downloads."
+  },
+  {
+    "RecommendedAction": "Ensure that mobile device encryption is enabled to prevent unauthorized access to mobile data",
+    "NIS2Score": 2,
+    "Article21": "H,I",
+    "Rationale": "Enabling mobile device encryption directly aligns with the requirement for policies and procedures regarding the use of cryptography and encryption (h), and also supports access control policies and asset management (i) by protecting data on mobile devices."
+  },
+  {
+    "RecommendedAction": "Fix Microsoft Defender for Endpoint sensor data collection",
+    "NIS2Score": 2,
+    "Article21": "A,B",
+    "Rationale": "Ensures complete visibility for effective incident response and risk assessment."
+  },
+  {
+    "RecommendedAction": "Turn on Microsoft Defender for Endpoint sensor",
+    "NIS2Score": 2,
+    "Article21": "A,B",
+    "Rationale": "Activates endpoint detection and response (EDR) capabilities critical for incident handling and risk management."
+  },
+  {
+    "RecommendedAction": "Enable Conditional Access policies to block legacy authentication",
+    "NIS2Score": 2,
+    "Article21": "I",
+    "Rationale": "Enforces modern, secure authentication methods, aligning with access control requirements."
+  },
+  {
+    "RecommendedAction": "Fix Microsoft Defender for Endpoint sensor data collection for Linux",
+    "NIS2Score": 2,
+    "Article21": "A,B,F",
+    "Rationale": "Fixing Microsoft Defender for Endpoint sensor data collection for Linux directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by ensuring proper monitoring and threat detection, and aligns with policies and procedures to assess the effectiveness of cybersecurity risk management measures (f)."
+  },
+  {
+    "RecommendedAction": "Turn on Microsoft Defender Antivirus",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Turning on Microsoft Defender Antivirus directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by providing endpoint protection, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Turn on real-time protection",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Turning on real-time protection directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by providing continuous monitoring and protection against threats, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Fix Microsoft Defender for Endpoint impaired communications for Linux",
+    "NIS2Score": 2,
+    "Article21": "A,B,F",
+    "Rationale": "Fixing Microsoft Defender for Endpoint impaired communications for Linux supports risk analysis and information system security policies (a), contributes to incident handling capabilities (b) by ensuring proper functioning of the endpoint protection solution, and aligns with policies and procedures to assess the effectiveness of cybersecurity risk management measures (f)."
+  },
+  {
+    "RecommendedAction": "Enable Microsoft Defender Antivirus scanning of downloaded files and attachments",
+    "NIS2Score": 2,
+    "Article21": "G",
+    "Rationale": "Implements essential threat protection measures for web browsing and file downloads."
+  },
+  {
+    "RecommendedAction": "Create Safe Links policies for email messages",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Creating Safe Links policies for email messages supports risk analysis and information system security policies (a), contributes to incident handling capabilities (b) by blocking malicious links, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Update Microsoft Defender Antivirus definitions for Linux",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Updating Microsoft Defender Antivirus definitions for Linux directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by ensuring up-to-date protection against threats, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Resume BitLocker protection on all drives",
+    "NIS2Score": 2,
+    "Article21": "A,H,I",
+    "Rationale": "Resuming BitLocker protection on all drives directly supports risk analysis and information system security policies (a), aligns with policies and procedures regarding the use of cryptography and encryption (h), and contributes to human resources security, access control policies, and asset management (i) by protecting data at rest."
+  },
+  {
+    "RecommendedAction": "Enable Microsoft Defender Antivirus email scanning",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Enabling Microsoft Defender Antivirus email scanning directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by detecting and blocking malicious emails, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Enable cloud-delivered protection",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Enabling cloud-delivered protection directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by providing up-to-date threat intelligence, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Turn on Tamper Protection",
+    "NIS2Score": 2,
+    "Article21": "F",
+    "Rationale": "Prevents unauthorized changes to security settings, ensuring the integrity and effectiveness of risk management measures."
+  },
+  {
+    "RecommendedAction": "Enable Microsoft Defender Antivirus cloud-delivered protection for Linux",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Enabling cloud-delivered protection for Linux supports risk analysis and information system security policies (a), contributes to incident handling capabilities (b) by providing up-to-date threat intelligence, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Fix Windows Defender Antivirus cloud service connectivity",
+    "NIS2Score": 2,
+    "Article21": "A,B,F",
+    "Rationale": "Fixing Windows Defender Antivirus cloud service connectivity directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by ensuring timely updates and protection, and aligns with policies and procedures to assess the effectiveness of cybersecurity risk management measures (f)."
+  },
+  {
+    "RecommendedAction": "Ensure that mailbox intelligence is enabled",
+    "NIS2Score": 2,
+    "Article21": "A,B",
+    "Rationale": "Ensuring that mailbox intelligence is enabled supports risk analysis and information system security policies (a) and contributes to incident handling capabilities (b) by detecting and responding to anomalous mailbox activities."
+  },
+  {
+    "RecommendedAction": "Create zero-hour auto purge policies for malware",
+    "NIS2Score": 2,
+    "Article21": "B",
+    "Rationale": "Automatically contains and remediates detected email threats, supporting incident handling capabilities."
+  },
+  {
+    "RecommendedAction": "Start your Defender for Identity deployment, installing Sensors on Domain Controllers and other eligible servers.",
+    "NIS2Score": 2,
+    "Article21": "A,B",
+    "Rationale": " Monitors and alerts on suspicious modifications to UPNs (User Principle Names), which can indicate attempts to compromise accounts or elevate privileges."
+  },
+  {
+    "RecommendedAction": "Stop weak cipher usage",
+    "NIS2Score": 2,
+    "Article21": "A,H",
+    "Rationale": "Stopping weak cipher usage directly supports risk analysis and information system security policies (a) and aligns with policies and procedures regarding the use of cryptography and encryption (h) by ensuring the use of strong encryption methods."
+  },
+  {
+    "RecommendedAction": "Turn on Microsoft Defender for Office 365 in SharePoint, OneDrive, and Microsoft Teams",
+    "NIS2Score": 2,
+    "Article21": "B,G",
+    "Rationale": "Provides advanced threat protection capabilities for email and collaboration tools, detecting and blocking sophisticated phishing, malware, and other threats."
+  },
+  {
+    "RecommendedAction": "Enable Microsoft Defender Antivirus real-time behavior monitoring",
+    "NIS2Score": 2,
+    "Article21": "A,B,G",
+    "Rationale": "Enabling Microsoft Defender Antivirus real-time behavior monitoring directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by detecting and responding to malicious behavior, and aligns with basic cyber hygiene practices and cybersecurity training (g)."
+  },
+  {
+    "RecommendedAction": "Ensure Microsoft Defender for Cloud Apps is enabled and configured",
+    "NIS2Score": 2,
+    "Article21": "A,B",
+    "Rationale": "Detects and alerts on unusual or suspicious activities within cloud applications, helping identify potential threats or breaches."
+  },
+  {
+    "RecommendedAction": "Install Defender for Identity Sensor on all Domain Controllers",
+    "NIS2Score": 2,
+    "Article21": "A,B,F",
+    "Rationale": "Justification: Installing Defender for Identity Sensor on all Domain Controllers directly supports risk analysis and information system security policies (a), enhances incident handling capabilities (b) by detecting and responding to identity-based threats, and aligns with policies and procedures to assess the effectiveness of cybersecurity risk management measures (f)."
+  },
+  {
+    "RecommendedAction": "Ensure modern authentication for Exchange Online is enabled",
+    "NIS2Score": 2,
+    "Article21": "I,J",
+    "Rationale": " Enabling modern authentication for Exchange Online directly aligns with human resources security, access control policies, and asset management (i), and supports the use of multi-factor authentication or continuous authentication"
+  },
+  {
+    "RecommendedAction": "Ensure Microsoft 365 audit log search is Enabled",
+    "NIS2Score": 2,
+    "Article21": "A,B,F",
+    "Rationale": "Enabling Microsoft 365 audit log search supports risk analysis and information system security policies (a), contributes to incident handling capabilities (b) by providing audit trails, and aligns with policies and procedures to assess the effectiveness of cybersecurity risk management measures (f)."
+  },
+  {
+    "RecommendedAction": "Ensure mailbox auditing for all users is Enabled",
+    "NIS2Score": 2,
+    "Article21": "A,B,F",
+    "Rationale": "Enabling mailbox auditing supports risk analysis and information system security policies (a), contributes to incident handling capabilities (b) by providing audit trails, and aligns with policies and procedures to assess the effectiveness of cybersecurity risk management measures (f)."
+  },
+  {
+    "RecommendedAction": "Ensure Safe Links for Office Applications is Enabled",
+    "NIS2Score": 2,
+    "Article21": "B,G",
+    "Rationale": "Provides advanced protection against malicious URLs and email attachments, critical for incident prevention."
+  }
+]
