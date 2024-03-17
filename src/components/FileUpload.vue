@@ -55,7 +55,7 @@ export default {
         },
       });
     },
-exportToPDF() {
+    exportToPDF() {
   this.$nextTick(() => {
     const element = this.$el;
     const opt = {
@@ -67,6 +67,7 @@ exportToPDF() {
     };
 
     html2pdf().set(opt).from(element).save();
+
   });
 },
     processData(data) {

@@ -30,7 +30,7 @@ export default {
       const pieChartData = this.calculatePieChartData();
 
       const layout = {
-        title: 'NIS2 Explicit vs Implicit Recommended Actions',
+        title: 'NIS2 Recommended Actions',
         font: {
           size: 14,
         },
