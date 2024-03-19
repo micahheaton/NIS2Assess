@@ -2,9 +2,9 @@
   <div id="app">
     <div class="app-container">  
       <header>
-        <h1>NIS2 Compliance Checker</h1>
+        <h1>NIS2 Readiness Assessment</h1>
         <img class="header-logo" src="https://storage.pardot.com/931493/1707771196VmVYJBIh/BlueVoyantLockupCMYKCobalt.png" alt="BlueVoyant Logo" />
-        <p>Welcome to the NIS2 Compliance Checker, a tool designed to help you align your security configurations with the NIS2 directive requirements.</p>
+        <p>Welcome to the NIS2 Readiness Assessment, a tool designed to help you align your security configurations with the Top-Level NIS2 directive requirements.</p>
       </header>
 
       <section class="overview-section"> 
