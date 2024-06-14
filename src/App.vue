@@ -222,9 +222,13 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('path/to/geometric-shapes.png');
-  background-repeat: no-repeat;
-  background-position: center;
+  background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%),
+              linear-gradient(45deg, var(--calcite) 25%, transparent 25%),
+              linear-gradient(-45deg, var(--calcite) 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, var(--calcite) 75%),
+              linear-gradient(-45deg, transparent 75%, var(--calcite) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 0, 10px -10px, 0px 10px, -10px 10px;
   opacity: 0.1;
   z-index: -1;
 }
