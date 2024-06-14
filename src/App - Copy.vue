@@ -78,22 +78,11 @@ export default {
 </script>
 
 <style>
-:root {
-  --primary-color: #0659FF; /* BV Blue */
-  --secondary-color: #676BFB; /* Azurite */
-  --white: #FFFFFF;
-  --black: #000000;
-  --calcite: #8DEDC7;
-}
-
-body {
-  font-family: 'Everett', sans-serif;
-}
-
 #app {
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); 
+  background: linear-gradient(to right, #007bff, #43a7fc); 
   min-height: 100vh; 
-  color: var(--black) !important; 
+  font-family: 'Lato', sans-serif;
+  color: black !important; 
 }
 
 .app-container {
@@ -102,44 +91,38 @@ body {
   align-items: center; 
   margin: 40px auto;
   max-width: 900px; 
-  background-color: var(--white);
+  background-color: #fff;
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); 
+  color: black;
 }
 
 header {
-  background-color: var(--white); 
+  background-color: #fff; 
   border-radius: 10px; 
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   padding: 20px 30px; 
   margin-bottom: 30px; 
-  display: flex; 
-  justify-content: center;
-  align-items: center;
+   display: flex; 
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically */
 }
 
 h1 {
-  color: var(--primary-color);
-  font-size: 2.5rem;
-  font-weight: 700;
+  color: #007bff; /* Use primary brand color */
+  font-size: 2.2em;
   margin-bottom: 10px;
 }
 
-h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
 p {
-  font-size: 1rem; 
+  font-size: 1em; 
   line-height: 1.6;
-  font-weight: 300;
 }
 
 .overview-section,
 .legend-section {
-  background-color: var(--white);
+  background-color: #fff;
   padding: 30px;
   margin: 30px 0;
   border-radius: 10px;
@@ -147,8 +130,8 @@ p {
 }
 
 button {
-  background-color: var(--primary-color); 
-  color: var(--white);
+  background-color: #007bff; 
+  color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -158,15 +141,15 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Slightly darker on hover */
 }
 
 .header-logo {
-  height: 225px;
-  position: absolute;
+  height: 225px; /* Adjust as needed */
+  position: absolute; /* Already existing */
   top: 10px; 
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Center horizontally */
 }
 
 .overview-and-video {
@@ -180,8 +163,7 @@ button:hover {
 }
 
 h3 {
-  color: var(--primary-color);
-  font-size: 1.5rem;
+  color: #007bff; /* Emphasize headers */
   font-weight: 600;
 }
 
@@ -202,30 +184,16 @@ h3 {
   left: 0;
   width: 100%; 
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0,0,0,0.5); 
   display: flex; 
   align-items: center;
   justify-content: center;
 }
 
 .loading-content {
-  background-color: var(--white);
-  padding: 20px;
-  border-radius: 5px;
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 5px;
 }
 
-/* Add geometric shapes for brand imagery */
-.app-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('path/to/geometric-shapes.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.1;
-  z-index: -1;
-}
 </style>
