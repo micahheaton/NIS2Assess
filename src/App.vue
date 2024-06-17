@@ -78,6 +78,10 @@ export default {
 </script>
 
 <style>
+
+#file-upload .upload-text {
+  color: var(--text-color); /* Set the text color for better contrast */
+}
 :root {
   --primary-color: #0659FF; /* BV Blue */
   --secondary-color: #676BFB; /* Azurite */

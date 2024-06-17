@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="file-upload-container">
     <input type="file" @change="handleFileUpload" accept=".csv" />
     <button @click="exportToPDF">Export to PDF</button>
 
-    <div v-if="comparisonResults.length">
+    <div v-if="comparisonResults.length" class="comparison-results">
       <h2>Comparison Results</h2>
       <NisNaNViz :comparison-results="filteredResults" @chart-click="handleChartClick" />
 
@@ -56,20 +56,19 @@ export default {
       });
     },
     exportToPDF() {
-  this.$nextTick(() => {
-    const element = this.$el;
-    const opt = {
-      margin: 1,
-      filename: 'comparison_results.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-    };
+      this.$nextTick(() => {
+        const element = this.$el;
+        const opt = {
+          margin: 1,
+          filename: 'comparison_results.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+        };
 
-    html2pdf().set(opt).from(element).save();
-
-  });
-},
+        html2pdf().set(opt).from(element).save();
+      });
+    },
     processData(data) {
       this.processedData = data.map((row) => ({
         Rank: row.Rank,
@@ -112,82 +111,95 @@ export default {
       return (achieved / total) * 100;
     },
     getColor(status) {
-      if (status === 'Completed') return 'green';
-      if (status === 'To Address') return 'red';
-      return 'gray';
+      if (status === 'Completed') return 'var(--primary-color)';
+      if (status === 'To Address') return 'var(--secondary-color)';
+      return 'var(--calcite)';
     },
     handleChartClick(chartData) {
-  if (chartData.type === 'bar') {
-    if (chartData.value === 'All') {
-      this.filteredResults = this.comparisonResults.filter((item) => item.NIS2Score !== 0);
-    } else {
-      this.filteredResults = this.comparisonResults.filter((item) => {
-        if (item.Article21) {
-          const articles = item.Article21.split(',');
-          return articles.includes(chartData.value.article) && item.Status === chartData.value.status && item.NIS2Score !== 0;
+      if (chartData.type === 'bar') {
+        if (chartData.value === 'All') {
+          this.filteredResults = this.comparisonResults.filter((item) => item.NIS2Score !== 0);
+        } else {
+          this.filteredResults = this.comparisonResults.filter((item) => {
+            if (item.Article21) {
+              const articles = item.Article21.split(',');
+              return articles.includes(chartData.value.article) && item.Status === chartData.value.status && item.NIS2Score !== 0;
+            }
+            return false;
+          });
         }
-        return false;
-      });
-    }
       } else if (chartData.type === 'pie') {
-    if (chartData.value === 'Not Recommended') {
-      this.filteredResults = this.comparisonResults.filter((item) => item.NIS2Score === 0);
-    } else {
-      const nis2Score = chartData.value === 'Implicit' ? 1 : 2;
-      this.filteredResults = this.comparisonResults.filter((item) => item.NIS2Score === nis2Score);
-    }
-  } else if (chartData.type === 'license') {
-    const hasLicense = chartData.value === '1';
-    this.filteredResults = this.comparisonResults.filter((item) => item.HasLicense === hasLicense && item.NIS2Score !== 0);
-  } else if (chartData.type === 'deployment') {
-    const status = chartData.value === 'Deployed' ? 'Completed' : 'To address';
-    this.filteredResults = this.comparisonResults.filter((item) => item.Status === status && item.NIS2Score !== 0);
-  }
-},
+        if (chartData.value === 'Not Recommended') {
+          this.filteredResults = this.comparisonResults.filter((item) => item.NIS2Score === 0);
+        } else {
+          const nis2Score = chartData.value === 'Implicit' ? 1 : 2;
+          this.filteredResults = this.comparisonResults.filter((item) => item.NIS2Score === nis2Score);
+        }
+      } else if (chartData.type === 'license') {
+        const hasLicense = chartData.value === '1';
+        this.filteredResults = this.comparisonResults.filter((item) => item.HasLicense === hasLicense && item.NIS2Score !== 0);
+      } else if (chartData.type === 'deployment') {
+        const status = chartData.value === 'Deployed' ? 'Completed' : 'To address';
+        this.filteredResults = this.comparisonResults.filter((item) => item.Status === status && item.NIS2Score !== 0);
+      }
+    },
   },
 };
 </script>
 
 <style>
-.app-container {
-  background-color: #222;
-  color: #eee;
+.file-upload-container {
+  background-color: var(--white);
+  color: var(--text-color);
   padding: 20px;
-  font-family: sans-serif;
+  font-family: 'Everett', sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.file-upload {
+.file-upload-container input[type="file"],
+.file-upload-container button {
   margin-bottom: 20px;
 }
 
-.charts-section {
-  display: flex;
-  justify-content: space-around;
-}
-
-.pie-chart-container,
-.bar-chart-container {
-  width: 45%;
-}
-
-.results-list {
+.comparison-results {
   margin-top: 30px;
 }
 
 .result-item {
-  background-color: #80d0ff;
+  background-color: var(--calcite);
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 5px;
+  color: var(--text-color);
 }
 
 .progress-bar {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: var(--secondary-color);
   height: 20px;
+  border-radius: 5px;
 }
 
 .progress-bar div {
   height: 100%;
+  border-radius: 5px;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 600;
 }
 </style>
