@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="chart-container">
     <div class="pie-chart-container" ref="pieChart"></div>
     <div class="pie-chart-container" ref="deploymentPieChart"></div>
     <div class="bar-chart-container" ref="barChart"></div>
@@ -33,7 +33,16 @@ export default {
         title: 'NIS2 Recommended Actions',
         font: {
           size: 14,
+          color: 'var(--text-color)',
+          family: 'Everett, sans-serif',
         },
+        legend: {
+          font: {
+            color: 'var(--text-color)',
+          },
+        },
+        paper_bgcolor: 'var(--white)',
+        plot_bgcolor: 'var(--white)',
       };
 
       Plotly.newPlot(this.$refs.pieChart, pieChartData.data, layout).then((plot) => {
@@ -45,35 +54,38 @@ export default {
       });
     },
     calculatePieChartData() {
-  let implicitCount = 0;
-  let explicitCount = 0;
-  let notRecommendedCount = 0;
+      let implicitCount = 0;
+      let explicitCount = 0;
+      let notRecommendedCount = 0;
 
-  this.comparisonResults.forEach((item) => {
-    if (item.NIS2Score === 1) {
-      implicitCount++;
-    } else if (item.NIS2Score === 2) {
-      explicitCount++;
-    } else if (item.NIS2Score === 0) {
-      notRecommendedCount++;
-    }
-  });
+      this.comparisonResults.forEach((item) => {
+        if (item.NIS2Score === 1) {
+          implicitCount++;
+        } else if (item.NIS2Score === 2) {
+          explicitCount++;
+        } else if (item.NIS2Score === 0) {
+          notRecommendedCount++;
+        }
+      });
 
-  return {
-    data: [
-      {
-        values: [implicitCount, explicitCount, notRecommendedCount],
-        labels: ['Implicit', 'Explicit', 'Not Recommended'],
-        type: 'pie',
-        marker: {
-          colors: ['#1f77b4', '#ff7f0e', '#2ca02c'],
-        },
-        textinfo: 'value',
-        hoverinfo: 'label+percent',
-      },
-    ],
-  };
-},
+      return {
+        data: [
+          {
+            values: [implicitCount, explicitCount, notRecommendedCount],
+            labels: ['Implicit', 'Explicit', 'Not Recommended'],
+            type: 'pie',
+            marker: {
+              colors: ['var(--primary-color)', 'var(--secondary-color)', 'var(--calcite)'],
+            },
+            textinfo: 'value',
+            hoverinfo: 'label+percent',
+            textfont: {
+              color: 'var(--white)',
+            },
+          },
+        ],
+      };
+    },
     renderBarChart() {
       const barChartData = this.calculateBarChartData();
 
@@ -81,70 +93,95 @@ export default {
         title: 'Article 21 Completion Status',
         xaxis: {
           title: 'Article',
+          color: 'var(--text-color)',
         },
         yaxis: {
           title: 'Count',
+          color: 'var(--text-color)',
         },
         barmode: 'group',
+        font: {
+          size: 14,
+          color: 'var(--text-color)',
+          family: 'Everett, sans-serif',
+        },
+        legend: {
+          font: {
+            color: 'var(--text-color)',
+          },
+        },
+        paper_bgcolor: 'var(--white)',
+        plot_bgcolor: 'var(--white)',
       };
 
       Plotly.newPlot(this.$refs.barChart, barChartData.data, layout).then((plot) => {
-    plot.on('plotly_click', (data) => {
-      const pointData = data.points[0];
-      const article = pointData.x;
-      const status = pointData.data.name;
-      this.$emit('chart-click', { type: 'bar', value: { article, status } });
-    });
-  });
-},
-calculateDeploymentPieChartData() {
-  let completedCount = 0;
-  let toAddressCount = 0;
-
-  this.comparisonResults.forEach((item) => {
-    if (item.NIS2Score === 1 || item.NIS2Score === 2) {
-      if (item.Status === 'Completed') {
-        completedCount++;
-      } else if (item.Status === 'To address') {
-        toAddressCount++;
-      }
-    }
-  });
-
-  return {
-    data: [
-      {
-        values: [completedCount, toAddressCount],
-        labels: ['Deployed', 'Not Deployed'],
-        type: 'pie',
-        marker: {
-          colors: ['green', 'red'],
-        },
-        textinfo: 'value',
-        hoverinfo: 'label+percent',
-      },
-    ],
-  };
-},
-
-renderDeploymentPieChart() {
-  const deploymentPieChartData = this.calculateDeploymentPieChartData();
-
-  const layout = {
-    title: 'Deployment Status',
-    font: {
-      size: 14,
+        plot.on('plotly_click', (data) => {
+          const pointData = data.points[0];
+          const article = pointData.x;
+          const status = pointData.data.name;
+          this.$emit('chart-click', { type: 'bar', value: { article, status } });
+        });
+      });
     },
-  };
+    calculateDeploymentPieChartData() {
+      let completedCount = 0;
+      let toAddressCount = 0;
 
-  Plotly.newPlot(this.$refs.deploymentPieChart, deploymentPieChartData.data, layout).then((plot) => {
-    plot.on('plotly_click', (data) => {
-      const pointData = data.points[0];
-      const filterValue = pointData.label;
-      this.$emit('chart-click', { type: 'deployment', value: filterValue });
-    });
-  });
-},
+      this.comparisonResults.forEach((item) => {
+        if (item.NIS2Score === 1 || item.NIS2Score === 2) {
+          if (item.Status === 'Completed') {
+            completedCount++;
+          } else if (item.Status === 'To address') {
+            toAddressCount++;
+          }
+        }
+      });
+
+      return {
+        data: [
+          {
+            values: [completedCount, toAddressCount],
+            labels: ['Deployed', 'Not Deployed'],
+            type: 'pie',
+            marker: {
+              colors: ['var(--primary-color)', 'var(--secondary-color)'],
+            },
+            textinfo: 'value',
+            hoverinfo: 'label+percent',
+            textfont: {
+              color: 'var(--white)',
+            },
+          },
+        ],
+      };
+    },
+    renderDeploymentPieChart() {
+      const deploymentPieChartData = this.calculateDeploymentPieChartData();
+
+      const layout = {
+        title: 'Deployment Status',
+        font: {
+          size: 14,
+          color: 'var(--text-color)',
+          family: 'Everett, sans-serif',
+        },
+        legend: {
+          font: {
+            color: 'var(--text-color)',
+          },
+        },
+        paper_bgcolor: 'var(--white)',
+        plot_bgcolor: 'var(--white)',
+      };
+
+      Plotly.newPlot(this.$refs.deploymentPieChart, deploymentPieChartData.data, layout).then((plot) => {
+        plot.on('plotly_click', (data) => {
+          const pointData = data.points[0];
+          const filterValue = pointData.label;
+          this.$emit('chart-click', { type: 'deployment', value: filterValue });
+        });
+      });
+    },
     calculateBarChartData() {
       const articleDeploymentStatus = {
         A: { Completed: 0, 'To address': 0 },
@@ -181,14 +218,14 @@ renderDeploymentPieChart() {
             y: completedData,
             name: 'Completed',
             type: 'bar',
-            marker: { color: 'green' },
+            marker: { color: 'var(--primary-color)' },
           },
           {
             x,
             y: toAddressData,
-            name: 'to Address',
+            name: 'To address',
             type: 'bar',
-            marker: { color: 'red' },
+            marker: { color: 'var(--secondary-color)' },
           },
         ],
       };
@@ -203,11 +240,11 @@ renderDeploymentPieChart() {
           pad: 15,
           thickness: 30,
           line: {
-            color: 'black',
+            color: 'var(--text-color)',
             width: 0.5,
           },
           label: sankeyData.nodes,
-          color: 'blue',
+          color: 'var(--primary-color)',
         },
         link: {
           source: sankeyData.sources,
@@ -220,7 +257,11 @@ renderDeploymentPieChart() {
         title: 'Sankey Diagram',
         font: {
           size: 10,
+          color: 'var(--text-color)',
+          family: 'Everett, sans-serif',
         },
+        paper_bgcolor: 'var(--white)',
+        plot_bgcolor: 'var(--white)',
       };
 
       Plotly.newPlot(this.$refs.sankeyDiagram, [data], layout);
@@ -259,11 +300,25 @@ renderDeploymentPieChart() {
         title: 'License Status by NIS2 Score',
         xaxis: {
           title: 'NIS2 Score',
+          color: 'var(--text-color)',
         },
         yaxis: {
           title: 'Count',
+          color: 'var(--text-color)',
         },
         barmode: 'group',
+        font: {
+          size: 14,
+          color: 'var(--text-color)',
+          family: 'Everett, sans-serif',
+        },
+        legend: {
+          font: {
+            color: 'var(--text-color)',
+          },
+        },
+        paper_bgcolor: 'var(--white)',
+        plot_bgcolor: 'var(--white)',
       };
 
       Plotly.newPlot(this.$refs.licenseChart, licenseChartData.data, layout).then((plot) => {
@@ -298,12 +353,14 @@ renderDeploymentPieChart() {
             y: withLicenseData,
             name: 'With License',
             type: 'bar',
+            marker: { color: 'var(--primary-color)' },
           },
           {
             x,
             y: withoutLicenseData,
             name: 'Without License',
             type: 'bar',
+            marker: { color: 'var(--secondary-color)' },
           },
         ],
       };
@@ -313,12 +370,19 @@ renderDeploymentPieChart() {
 </script>
 
 <style scoped>
+.chart-container {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
 .pie-chart-container {
   width: 100%;
   height: 400px;
 }
 .bar-chart-container {
   width: 100%;
-  height: 600px; /* Adjust the height as needed */
+  height: 600px;
 }
 </style>
