@@ -84,10 +84,12 @@ export default {
   --white: #FFFFFF;
   --black: #000000;
   --calcite: #8DEDC7;
+  --text-color: #333333; /* Darker text color for better contrast */
 }
 
 body {
   font-family: 'Everett', sans-serif;
+  color: var(--text-color); /* Set the default text color */
 }
 
 #app {
@@ -143,7 +145,8 @@ p {
   padding: 30px;
   margin: 30px 0;
   border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); 
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  color: var(--text-color); /* Set the text color for better contrast */
 }
 
 button {
