@@ -30,15 +30,20 @@ export default {
       const pieChartData = this.calculatePieChartData();
 
       const layout = {
-        title: 'NIS2 Recommended Actions',
+        title: {
+          text: 'NIS2 Recommended Actions',
+          font: {
+            color: 'var(--bv-blue)',
+          },
+        },
         font: {
           size: 14,
-          color: 'var(--text-color)',
+          color: 'var(--black)',
           family: 'Everett, sans-serif',
         },
         legend: {
           font: {
-            color: 'var(--text-color)',
+            color: 'var(--black)',
           },
         },
         paper_bgcolor: 'var(--white)',
@@ -75,7 +80,7 @@ export default {
             labels: ['Implicit', 'Explicit', 'Not Recommended'],
             type: 'pie',
             marker: {
-              colors: ['var(--primary-color)', 'var(--secondary-color)', 'var(--calcite)'],
+              colors: ['var(--bv-blue)', 'var(--azurite)', 'var(--calcite)'],
             },
             textinfo: 'value',
             hoverinfo: 'label+percent',
@@ -90,24 +95,29 @@ export default {
       const barChartData = this.calculateBarChartData();
 
       const layout = {
-        title: 'Article 21 Completion Status',
+        title: {
+          text: 'Article 21 Completion Status',
+          font: {
+            color: 'var(--bv-blue)',
+          },
+        },
         xaxis: {
           title: 'Article',
-          color: 'var(--text-color)',
+          color: 'var(--black)',
         },
         yaxis: {
           title: 'Count',
-          color: 'var(--text-color)',
+          color: 'var(--black)',
         },
         barmode: 'group',
         font: {
           size: 14,
-          color: 'var(--text-color)',
+          color: 'var(--black)',
           family: 'Everett, sans-serif',
         },
         legend: {
           font: {
-            color: 'var(--text-color)',
+            color: 'var(--black)',
           },
         },
         paper_bgcolor: 'var(--white)',
@@ -144,7 +154,7 @@ export default {
             labels: ['Deployed', 'Not Deployed'],
             type: 'pie',
             marker: {
-              colors: ['var(--primary-color)', 'var(--secondary-color)'],
+              colors: ['var(--bv-blue)', 'var(--azurite)'],
             },
             textinfo: 'value',
             hoverinfo: 'label+percent',
@@ -159,15 +169,20 @@ export default {
       const deploymentPieChartData = this.calculateDeploymentPieChartData();
 
       const layout = {
-        title: 'Deployment Status',
+        title: {
+          text: 'Deployment Status',
+          font: {
+            color: 'var(--bv-blue)',
+          },
+        },
         font: {
           size: 14,
-          color: 'var(--text-color)',
+          color: 'var(--black)',
           family: 'Everett, sans-serif',
         },
         legend: {
           font: {
-            color: 'var(--text-color)',
+            color: 'var(--black)',
           },
         },
         paper_bgcolor: 'var(--white)',
@@ -218,7 +233,7 @@ export default {
             y: completedData,
             name: 'Completed',
             type: 'bar',
-            marker: { color: 'var(--primary-color)' },
+            marker: { color: 'var(--bv-blue)' },
           },
           {
             x,
@@ -240,7 +255,7 @@ export default {
           pad: 15,
           thickness: 30,
           line: {
-            color: 'var(--text-color)',
+            color: 'var(--black)',
             width: 0.5,
           },
           label: sankeyData.nodes,
@@ -255,10 +270,15 @@ export default {
       };
 
       const layout = {
-        title: 'Sankey Diagram',
+        title: {
+          text: 'Sankey Diagram',
+          font: {
+            color: 'var(--bv-blue)',
+          },
+        },
         font: {
           size: 10,
-          color: 'var(--text-color)',
+          color: 'var(--black)',
           family: 'Everett, sans-serif',
         },
         paper_bgcolor: 'var(--white)',
@@ -276,16 +296,16 @@ export default {
       const linkColors = [];
 
       const categoryColors = {
-        Identity: 'var(--primary-color)',
-        Devices: 'var(--secondary-color)',
+        Identity: 'var(--bv-blue)',
+        Devices: 'var(--azurite)',
         Apps: 'var(--calcite)',
         // Add more category colors as needed
       };
 
       const nis2ScoreColors = {
         '0': 'var(--calcite)',
-        '1': 'var(--primary-color)',
-        '2': 'var(--secondary-color)',
+        '1': 'var(--bv-blue)',
+        '2': 'var(--azurite)',
       };
 
       this.comparisonResults.forEach((item) => {
@@ -318,24 +338,29 @@ export default {
       const licenseChartData = this.calculateLicenseChartData();
 
       const layout = {
-        title: 'License Status by NIS2 Score',
+        title: {
+          text: 'License Status by NIS2 Score',
+          font: {
+            color: 'var(--bv-blue)',
+          },
+        },
         xaxis: {
           title: 'NIS2 Score',
-          color: 'var(--text-color)',
+          color: 'var(--black)',
         },
         yaxis: {
           title: 'Count',
-          color: 'var(--text-color)',
+          color: 'var(--black)',
         },
         barmode: 'group',
         font: {
           size: 14,
-          color: 'var(--text-color)',
+          color: 'var(--black)',
           family: 'Everett, sans-serif',
         },
         legend: {
           font: {
-            color: 'var(--text-color)',
+            color: 'var(--black)',
           },
         },
         paper_bgcolor: 'var(--white)',
@@ -374,14 +399,14 @@ export default {
             y: withLicenseData,
             name: 'With License',
             type: 'bar',
-            marker: { color: 'var(--primary-color)' },
+            marker: { color: 'var(--bv-blue)' },
           },
           {
             x,
             y: withoutLicenseData,
             name: 'Without License',
             type: 'bar',
-            marker: { color: 'var(--secondary-color)' },
+            marker: { color: 'var(--calcite)' },
           },
         ],
       };
@@ -401,9 +426,23 @@ export default {
 .pie-chart-container {
   width: 100%;
   height: 400px;
+  margin-bottom: 20px;
 }
+
 .bar-chart-container {
   width: 100%;
   height: 600px;
+  margin-bottom: 20px;
+}
+
+.sankey-container {
+  width: 100%;
+  height: 600px;
+  margin-bottom: 20px;
+}
+
+.license-chart-container {
+  width: 100%;
+  height: 400px;
 }
 </style>
