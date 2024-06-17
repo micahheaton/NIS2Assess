@@ -84,7 +84,7 @@ export default {
   --white: #FFFFFF;
   --black: #000000;
   --calcite: #8DEDC7;
-  --text-color: #333333; /* Darker text color for better contrast */
+  --text-color: #1A1A1A; /* Even darker text color for better contrast */
 }
 
 body {
@@ -141,7 +141,7 @@ p {
 
 .overview-section,
 .legend-section {
-  background-color: var(--white);
+  background-color: #F5F5F5; /* Light gray background for better contrast */
   padding: 30px;
   margin: 30px 0;
   border-radius: 10px;
@@ -157,11 +157,11 @@ button {
   border-radius: 5px;
   font-weight: 600; 
   cursor: pointer;
-  transition: background-color 0.2s ease; 
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #003F8A; /* Darker blue for better contrast on hover */
 }
 
 .header-logo {
