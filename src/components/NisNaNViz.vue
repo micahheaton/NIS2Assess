@@ -225,7 +225,7 @@ export default {
             y: toAddressData,
             name: 'To address',
             type: 'bar',
-            marker: { color: 'var(--secondary-color)' },
+            marker: { color: 'var(--calcite)' },
           },
         ],
       };
@@ -244,12 +244,13 @@ export default {
             width: 0.5,
           },
           label: sankeyData.nodes,
-          color: 'var(--primary-color)',
+          color: sankeyData.nodeColors,
         },
         link: {
           source: sankeyData.sources,
           target: sankeyData.targets,
           value: sankeyData.values,
+          color: sankeyData.linkColors,
         },
       };
 
@@ -271,19 +272,37 @@ export default {
       const sources = [];
       const targets = [];
       const values = [];
+      const nodeColors = [];
+      const linkColors = [];
+
+      const categoryColors = {
+        Identity: 'var(--primary-color)',
+        Devices: 'var(--secondary-color)',
+        Apps: 'var(--calcite)',
+        // Add more category colors as needed
+      };
+
+      const nis2ScoreColors = {
+        '0': 'var(--calcite)',
+        '1': 'var(--primary-color)',
+        '2': 'var(--secondary-color)',
+      };
 
       this.comparisonResults.forEach((item) => {
         if (!nodes.includes(item.Category)) {
           nodes.push(item.Category);
+          nodeColors.push(categoryColors[item.Category]);
         }
         if (!nodes.includes(item.NIS2Score)) {
           nodes.push(item.NIS2Score);
+          nodeColors.push(nis2ScoreColors[item.NIS2Score]);
         }
         const sourceIndex = nodes.indexOf(item.Category);
         const targetIndex = nodes.indexOf(item.NIS2Score);
         sources.push(sourceIndex);
         targets.push(targetIndex);
         values.push(1);
+        linkColors.push(categoryColors[item.Category]);
       });
 
       return {
@@ -291,6 +310,8 @@ export default {
         sources,
         targets,
         values,
+        nodeColors,
+        linkColors,
       };
     },
     renderLicenseChart() {
