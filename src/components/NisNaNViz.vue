@@ -300,16 +300,16 @@ export default {
 
     const categoryColors = {
       Identity: '#3B82F6', // Blue
-      Devices: '#8B5CF6', // Purple
-      Apps: this.getColor('--calcite'),
-      Data: '#10B981', // Green
+      Devices: '#10B981', // Green
+      Apps: '#8B5CF6', // Purple
+      Data: '#F59E0B', // Amber
       // Add more category colors as needed
     };
 
     const nis2ScoreColors = {
-      '0': '#F59E0B', // Amber
-      '1': '#2563EB', // Blue
-      '2': '#7C3AED', // Purple
+      '0': '#8DEDC7', // Calcite (Not Recommended)
+      '1': '#0659FF', // BV Blue (Implicit)
+      '2': '#676BFB', // Azurite (Explicit)
     };
 
     this.comparisonResults.forEach((item) => {
