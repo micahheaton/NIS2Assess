@@ -1,4 +1,3 @@
-</style>
 <template>
   <div class="chart-container">
     <div class="pie-chart-container" ref="pieChart"></div>
