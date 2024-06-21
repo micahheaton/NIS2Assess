@@ -157,7 +157,7 @@ export default {
             labels: ['Deployed', 'Not Deployed'],
             type: 'pie',
             marker: {
-              colors: [this.getColor('--bv-blue'), this.getColor('--azurite')],
+              colors: [this.getColor('--bv-blue'), this.getColor('--calcite')],
             },
             textinfo: 'value',
             hoverinfo: 'label+percent',
@@ -258,7 +258,7 @@ export default {
           pad: 15,
           thickness: 30,
           line: {
-            color: this.getColor('--black'),
+            color: this.getColor('--azurite'),
             width: 0.5,
           },
           label: sankeyData.nodes,
@@ -306,7 +306,7 @@ export default {
       };
 
       const nis2ScoreColors = {
-        '0': this.getColor('--white'),
+        '0': this.getColor('--calcite'),
         '1': this.getColor('--bv-blue'),
         '2': this.getColor('--azurite'),
       };
@@ -409,7 +409,7 @@ export default {
             y: withoutLicenseData,
             name: 'Without License',
             type: 'bar',
-            marker: { color: this.getColor('--azurite') },
+            marker: { color: this.getColor('--calcite') },
           },
         ],
       };
