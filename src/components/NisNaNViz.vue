@@ -1,3 +1,4 @@
+</style>
 <template>
   <div class="chart-container">
     <div class="pie-chart-container" ref="pieChart"></div>
@@ -26,6 +27,9 @@ export default {
     this.renderLicenseChart();
   },
   methods: {
+    getColor(variableName) {
+      return getComputedStyle(document.documentElement).getPropertyValue(variableName).trim();
+    },
     renderPieChart() {
       const pieChartData = this.calculatePieChartData();
 
@@ -33,21 +37,21 @@ export default {
         title: {
           text: 'NIS2 Recommended Actions',
           font: {
-            color: 'var(--bv-blue)',
+            color: this.getColor('--bv-blue'),
           },
         },
         font: {
           size: 14,
-          color: 'var(--black)',
+          color: this.getColor('--black'),
           family: 'Everett, sans-serif',
         },
         legend: {
           font: {
-            color: 'var(--black)',
+            color: this.getColor('--black'),
           },
         },
-        paper_bgcolor: 'var(--white)',
-        plot_bgcolor: 'var(--white)',
+        paper_bgcolor: this.getColor('--white'),
+        plot_bgcolor: this.getColor('--white'),
       };
 
       Plotly.newPlot(this.$refs.pieChart, pieChartData.data, layout).then((plot) => {
@@ -80,12 +84,12 @@ export default {
             labels: ['Implicit', 'Explicit', 'Not Recommended'],
             type: 'pie',
             marker: {
-              colors: ['var(--bv-blue)', 'var(--azurite)', 'var(--calcite)'],
+              colors: [this.getColor('--bv-blue'), this.getColor('--azurite'), this.getColor('--calcite')],
             },
             textinfo: 'value',
             hoverinfo: 'label+percent',
             textfont: {
-              color: 'var(--white)',
+              color: this.getColor('--white'),
             },
           },
         ],
@@ -98,30 +102,30 @@ export default {
         title: {
           text: 'Article 21 Completion Status',
           font: {
-            color: 'var(--bv-blue)',
+            color: this.getColor('--bv-blue'),
           },
         },
         xaxis: {
           title: 'Article',
-          color: 'var(--black)',
+          color: this.getColor('--black'),
         },
         yaxis: {
           title: 'Count',
-          color: 'var(--black)',
+          color: this.getColor('--black'),
         },
         barmode: 'group',
         font: {
           size: 14,
-          color: 'var(--black)',
+          color: this.getColor('--black'),
           family: 'Everett, sans-serif',
         },
         legend: {
           font: {
-            color: 'var(--black)',
+            color: this.getColor('--black'),
           },
         },
-        paper_bgcolor: 'var(--white)',
-        plot_bgcolor: 'var(--white)',
+        paper_bgcolor: this.getColor('--white'),
+        plot_bgcolor: this.getColor('--white'),
       };
 
       Plotly.newPlot(this.$refs.barChart, barChartData.data, layout).then((plot) => {
@@ -154,12 +158,12 @@ export default {
             labels: ['Deployed', 'Not Deployed'],
             type: 'pie',
             marker: {
-              colors: ['var(--bv-blue)', 'var(--azurite)'],
+              colors: [this.getColor('--bv-blue'), this.getColor('--azurite')],
             },
             textinfo: 'value',
             hoverinfo: 'label+percent',
             textfont: {
-              color: 'var(--white)',
+              color: this.getColor('--white'),
             },
           },
         ],
@@ -172,21 +176,21 @@ export default {
         title: {
           text: 'Deployment Status',
           font: {
-            color: 'var(--bv-blue)',
+            color: this.getColor('--bv-blue'),
           },
         },
         font: {
           size: 14,
-          color: 'var(--black)',
+          color: this.getColor('--black'),
           family: 'Everett, sans-serif',
         },
         legend: {
           font: {
-            color: 'var(--black)',
+            color: this.getColor('--black'),
           },
         },
-        paper_bgcolor: 'var(--white)',
-        plot_bgcolor: 'var(--white)',
+        paper_bgcolor: this.getColor('--white'),
+        plot_bgcolor: this.getColor('--white'),
       };
 
       Plotly.newPlot(this.$refs.deploymentPieChart, deploymentPieChartData.data, layout).then((plot) => {
@@ -233,14 +237,14 @@ export default {
             y: completedData,
             name: 'Completed',
             type: 'bar',
-            marker: { color: 'var(--bv-blue)' },
+            marker: { color: this.getColor('--bv-blue') },
           },
           {
             x,
             y: toAddressData,
             name: 'To address',
             type: 'bar',
-            marker: { color: 'var(--calcite)' },
+            marker: { color: this.getColor('--calcite') },
           },
         ],
       };
@@ -255,7 +259,7 @@ export default {
           pad: 15,
           thickness: 30,
           line: {
-            color: 'var(--black)',
+            color: this.getColor('--black'),
             width: 0.5,
           },
           label: sankeyData.nodes,
@@ -273,16 +277,16 @@ export default {
         title: {
           text: 'Sankey Diagram',
           font: {
-            color: 'var(--bv-blue)',
+            color: this.getColor('--bv-blue'),
           },
         },
         font: {
           size: 10,
-          color: 'var(--black)',
+          color: this.getColor('--black'),
           family: 'Everett, sans-serif',
         },
-        paper_bgcolor: 'var(--white)',
-        plot_bgcolor: 'var(--white)',
+        paper_bgcolor: this.getColor('--white'),
+        plot_bgcolor: this.getColor('--white'),
       };
 
       Plotly.newPlot(this.$refs.sankeyDiagram, [data], layout);
@@ -296,16 +300,16 @@ export default {
       const linkColors = [];
 
       const categoryColors = {
-        Identity: 'var(--bv-blue)',
-        Devices: 'var(--azurite)',
-        Apps: 'var(--calcite)',
+        Identity: this.getColor('--bv-blue'),
+        Devices: this.getColor('--azurite'),
+        Apps: this.getColor('--calcite'),
         // Add more category colors as needed
       };
 
       const nis2ScoreColors = {
-        '0': 'var(--calcite)',
-        '1': 'var(--bv-blue)',
-        '2': 'var(--azurite)',
+        '0': this.getColor('--white'),
+        '1': this.getColor('--bv-blue'),
+        '2': this.getColor('--azurite'),
       };
 
       this.comparisonResults.forEach((item) => {
@@ -341,30 +345,30 @@ export default {
         title: {
           text: 'License Status by NIS2 Score',
           font: {
-            color: 'var(--bv-blue)',
+            color: this.getColor('--bv-blue'),
           },
         },
         xaxis: {
           title: 'NIS2 Score',
-          color: 'var(--black)',
+          color: this.getColor('--black'),
         },
         yaxis: {
           title: 'Count',
-          color: 'var(--black)',
+          color: this.getColor('--black'),
         },
         barmode: 'group',
         font: {
           size: 14,
-          color: 'var(--black)',
+          color: this.getColor('--black'),
           family: 'Everett, sans-serif',
         },
         legend: {
           font: {
-            color: 'var(--black)',
+            color: this.getColor('--black'),
           },
         },
-        paper_bgcolor: 'var(--white)',
-        plot_bgcolor: 'var(--white)',
+        paper_bgcolor: this.getColor('--white'),
+        plot_bgcolor: this.getColor('--white'),
       };
 
       Plotly.newPlot(this.$refs.licenseChart, licenseChartData.data, layout).then((plot) => {
@@ -399,14 +403,14 @@ export default {
             y: withLicenseData,
             name: 'With License',
             type: 'bar',
-            marker: { color: 'var(--bv-blue)' },
+            marker: { color: this.getColor('--bv-blue') },
           },
           {
             x,
             y: withoutLicenseData,
             name: 'Without License',
             type: 'bar',
-            marker: { color: 'var(--calcite)' },
+            marker: { color: this.getColor('--azurite') },
           },
         ],
       };
