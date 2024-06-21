@@ -291,52 +291,53 @@ export default {
       Plotly.newPlot(this.$refs.sankeyDiagram, [data], layout);
     },
     calculateSankeyData() {
-      const nodes = [];
-      const sources = [];
-      const targets = [];
-      const values = [];
-      const nodeColors = [];
-      const linkColors = [];
+    const nodes = [];
+    const sources = [];
+    const targets = [];
+    const values = [];
+    const nodeColors = [];
+    const linkColors = [];
 
-      const categoryColors = {
-        Identity: this.getColor('--bv-blue'),
-        Devices: this.getColor('--azurite'),
-        Apps: this.getColor('--calcite'),
-        // Add more category colors as needed
-      };
+    const categoryColors = {
+      Identity: '#3B82F6', // Blue
+      Devices: '#8B5CF6', // Purple
+      Apps: this.getColor('--calcite'),
+      Data: '#10B981', // Green
+      // Add more category colors as needed
+    };
 
-      const nis2ScoreColors = {
-        '0': this.getColor('--calcite'),
-        '1': this.getColor('--bv-blue'),
-        '2': this.getColor('--azurite'),
-      };
+    const nis2ScoreColors = {
+      '0': '#F59E0B', // Amber
+      '1': '#2563EB', // Blue
+      '2': '#7C3AED', // Purple
+    };
 
-      this.comparisonResults.forEach((item) => {
-        if (!nodes.includes(item.Category)) {
-          nodes.push(item.Category);
-          nodeColors.push(categoryColors[item.Category]);
-        }
-        if (!nodes.includes(item.NIS2Score)) {
-          nodes.push(item.NIS2Score);
-          nodeColors.push(nis2ScoreColors[item.NIS2Score]);
-        }
-        const sourceIndex = nodes.indexOf(item.Category);
-        const targetIndex = nodes.indexOf(item.NIS2Score);
-        sources.push(sourceIndex);
-        targets.push(targetIndex);
-        values.push(1);
-        linkColors.push(categoryColors[item.Category]);
-      });
+    this.comparisonResults.forEach((item) => {
+      if (!nodes.includes(item.Category)) {
+        nodes.push(item.Category);
+        nodeColors.push(categoryColors[item.Category]);
+      }
+      if (!nodes.includes(item.NIS2Score)) {
+        nodes.push(item.NIS2Score);
+        nodeColors.push(nis2ScoreColors[item.NIS2Score]);
+      }
+      const sourceIndex = nodes.indexOf(item.Category);
+      const targetIndex = nodes.indexOf(item.NIS2Score);
+      sources.push(sourceIndex);
+      targets.push(targetIndex);
+      values.push(1);
+      linkColors.push(categoryColors[item.Category]);
+    });
 
-      return {
-        nodes,
-        sources,
-        targets,
-        values,
-        nodeColors,
-        linkColors,
-      };
-    },
+    return {
+      nodes,
+      sources,
+      targets,
+      values,
+      nodeColors,
+      linkColors,
+    };
+  },
     renderLicenseChart() {
       const licenseChartData = this.calculateLicenseChartData();
 
