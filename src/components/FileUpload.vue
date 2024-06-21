@@ -111,10 +111,10 @@ export default {
       return (achieved / total) * 100;
     },
     getColor(status) {
-      if (status === 'Completed') return 'var(--primary-color)';
-      if (status === 'To Address') return 'var(--secondary-color)';
-      return 'var(--calcite)';
-    },
+  if (status === 'Completed') return '#10B981'; // Green color for 'Completed' status
+  if (status === 'To Address') return '#F59E0B'; // Amber color for 'To Address' status
+  return '#E5E7EB'; // Light gray color for other statuses
+},
     handleChartClick(chartData) {
       if (chartData.type === 'bar') {
         if (chartData.value === 'All') {
